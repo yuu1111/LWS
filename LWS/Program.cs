@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace LWS
 {
     static class Program
@@ -14,6 +15,11 @@ namespace LWS
         [STAThread]
         static void Main()
         {
+            HSPRNG.Randomize(0);
+            for (int i = 0; i < 5; ++i)
+                Console.WriteLine(HSPRNG.Rnd(32768));
+
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
