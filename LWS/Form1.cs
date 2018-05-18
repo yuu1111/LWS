@@ -16,5 +16,20 @@ namespace LWS
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int BloodID = 50501;
+            for (int i = 0; i < 10; ++i)
+            {
+
+                HSPRNG.Randomize(BloodID);
+                HSPRNG.ExRandomize(BloodID);
+                int var_001 = 4 + HSPRNG.Rnd(12);
+                Console.WriteLine(BloodID + "," + var_001);
+                BloodID++;
+
+            }
+        }
     }
 }
