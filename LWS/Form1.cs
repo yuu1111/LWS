@@ -12,22 +12,23 @@ namespace LWS
 {
     public partial class Form1 : Form
     {
+
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public void button1_Click(object sender, EventArgs e)
         {
             String TextBox1 = textBox1.Text;
             int SracheID = int.Parse(TextBox1);
             int SeedID = 50501;
             int ListNo = 1;
             int PageNo;
-
+            Console.WriteLine("No,Page,Id,Blood");
             for (int i = 0; i < SracheID; ++i)
             {
-            int  PageNo1 = SeedID - 50501;
+                int PageNo1 = SeedID - 50501;
                 PageNo = PageNo1 / 16 + 1;
                 HSPRNG.Randomize(SeedID);
                 HSPRNG.ExRandomize(SeedID);
@@ -35,12 +36,43 @@ namespace LWS
                 Console.WriteLine(ListNo + "," + PageNo + "," + SeedID + "," + BloodLV);
                 SeedID++;
                 ListNo++;
+
+
+
             }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        public void textBox1_TextChanged(object sender, EventArgs e)
         {
-       
+
+        }
+        public void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            List<string> row = null;
+
+            using (var csv = new CsvReader(@"ndata.csv"))
+            {
+                while ((row = csv.ReadRow()) != null)
+                {
+
+                  
+                    string str = row[0];
+                    Console.WriteLine(str);
+                    //         Console.WriteLine(row[1].ToString());
+                }
+            }
         }
     }
+
 }

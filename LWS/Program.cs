@@ -14,7 +14,7 @@ namespace LWS
         /// <summary>
         /// アプリケーションのメイン エントリ ポイントです。
         /// </summary>
-        [STAThread]
+
         static void Main()
         {
 
@@ -24,5 +24,8 @@ namespace LWS
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }
+
+           
+        
     }
 }
