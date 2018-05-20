@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+
+
 
 
 namespace LWS
@@ -15,14 +13,18 @@ namespace LWS
         [STAThread]
         static void Main()
         {
-            HSPRNG.Randomize(0);
-            for (int i = 0; i < 5; ++i)
-                Console.WriteLine(HSPRNG.Rnd(32768));
+            RandomTitleGenerator.Initialize("ndata.csv");
+
+            for (int i = 1; i < 17; ++i)
+            {
+                HSPRNG.Randomize(10500 + i);
+                Console.WriteLine(RandomTitleGenerator.Generate(true));
+            }
 
 
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            //Application.EnableVisualStyles();
+            //Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new Form1());
         }
     }
 }
