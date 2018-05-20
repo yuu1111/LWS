@@ -67,9 +67,8 @@ namespace LWS
                 {
 
                   
-                    string str = row[0];
-                    Console.WriteLine(str);
-                    //         Console.WriteLine(row[1].ToString());
+               
+                Console.WriteLine(row[2].ToString());
                 }
             }
         }
