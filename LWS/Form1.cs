@@ -59,19 +59,8 @@ namespace LWS
 
         private void button2_Click(object sender, EventArgs e)
         {
-            List<string> row = null;
-
-            using (var csv = new CsvReader(@"ndata.csv"))
-            {
-                while ((row = csv.ReadRow()) != null)
-                {
-
-                  
-               
-                Console.WriteLine(row[2].ToString());
-                }
+          
             }
         }
     }
 
-}
