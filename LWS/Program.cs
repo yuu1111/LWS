@@ -1,30 +1,29 @@
 ﻿using System;
-
-
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 
 namespace LWS
 {
-    static class Program
+    namespace LWS
     {
-        /// <summary>
-        /// アプリケーションのメイン エントリ ポイントです。
-        /// </summary>
-        [STAThread]
-        static void Main()
+        static class Program
         {
-            RandomTitleGenerator.Initialize("ndata.csv");
-
-            for (int i = 1; i < 17; ++i)
+            /// <summary>
+            /// アプリケーションのメイン エントリ ポイントです。
+            /// </summary>
+            [STAThread]
+            static void Main()
             {
-                HSPRNG.Randomize(10500 + i);
-                Console.WriteLine(RandomTitleGenerator.Generate(true));
+
+
+
+               Application.EnableVisualStyles();
+               Application.SetCompatibleTextRenderingDefault(false);
+               Application.Run(new Form1());
             }
-
-
-            //Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Form1());
         }
     }
 }
