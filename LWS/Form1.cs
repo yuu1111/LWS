@@ -18,7 +18,7 @@ namespace LWS
             InitializeComponent();
         }
 
-        public void button1_Click(object sender, EventArgs e)
+        public void JP_Click(object sender, EventArgs e)
         {
 
 
@@ -40,7 +40,7 @@ namespace LWS
                 HSPRNG.Randomize(SeedID);
                 HSPRNG.ExRandomize(SeedID);
                 int BloodLV = 4 + HSPRNG.Rnd(12);
-                Console.WriteLine(ListNo + "," + PageNo + "," + SeedID +"," + Inscription +  "," + BloodLV);
+                Console.WriteLine(ListNo + "," + PageNo + "," + SeedID + "," + Inscription + "," + BloodLV);
                 SeedID++;
                 ListNo++;
 
@@ -64,10 +64,62 @@ namespace LWS
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void EN_Click(object sender, EventArgs e)
         {
-          
+
+
+            RandomTitleGenerator.Initialize("ndata-e.csv");
+
+            String TextBox1 = textBox1.Text;
+            int SracheID = int.Parse(TextBox1);
+            int SeedID = 50500;
+            int ListNo = 1;
+            int PageNo;
+            Console.WriteLine("No,Page,Id,Name,Blood");
+            for (int i = 0; i < SracheID; ++i)
+            {
+
+                HSPRNG.Randomize(10500 + i);
+                String Inscription = RandomTitleGenerator.Generate(true);
+                int PageNo1 = SeedID - 50501;
+                PageNo = PageNo1 / 16 + 1;
+                HSPRNG.Randomize(SeedID);
+                HSPRNG.ExRandomize(SeedID);
+                int BloodLV = 4 + HSPRNG.Rnd(12);
+                Console.WriteLine(ListNo + "," + PageNo + "," + SeedID + "," + Inscription + "," + BloodLV);
+                SeedID++;
+                ListNo++;
+
+
+
+
             }
         }
+
+        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox5_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox6_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
+}
 
